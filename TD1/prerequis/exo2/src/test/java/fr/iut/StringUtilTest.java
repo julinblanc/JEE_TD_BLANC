@@ -14,5 +14,6 @@ public class StringUtilTest {
     public void prettyCurrencyPrintTest() {
         assert("210,00 €".equals(StringUtil.prettyCurrencyPrint(210, Locale.FRANCE)));
         Assert.assertEquals("￥1,600.00", StringUtil.prettyCurrencyPrint(1600, Locale.CHINA));
+        assert("21\u00a0500,39 €".equals(StringUtil.prettyCurrencyPrint(21500.390, Locale.FRANCE)));
     }
 }
