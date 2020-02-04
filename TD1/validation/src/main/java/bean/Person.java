@@ -1,17 +1,27 @@
 package bean;
 
 
+import bean.validation.Login;
+import bean.validation.Email;
+
 import javax.validation.Constraint;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Person {
 
+    @NotNull
+    @Email
     private String email;
+
+    @NotNull
     private String firstName;
 
+    @NotNull
     private String lastName;
 
-    @Size(min = 2, max = 8)
+    @NotNull
+    @Login
     private String login;
 
     private boolean isStudent;
