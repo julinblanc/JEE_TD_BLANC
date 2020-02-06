@@ -1,14 +1,25 @@
 package bean;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.util.Date;
 
 public abstract class Document {
+
+    @NotNull
     private String title;
+
     private String content;
+
+    @Past
     private Date creationDate;
+
+    @Past
     private Date lastModification;
 
+    @NotNull
     private Person creator;
+
     private Person lastModifier;
 
     public Document(String title, String content, Date cDate, Date lModif) {

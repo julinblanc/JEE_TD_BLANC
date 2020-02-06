@@ -1,6 +1,7 @@
 package bean.validation;
 
 import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -15,6 +16,7 @@ import static java.lang.annotation.ElementType.*;
 
 public @interface Login {
 
-    String message() default "{latin alphabet must be used.}";
+    String message() default "{Latin alphabet must be used.}";
     Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default{};
 }

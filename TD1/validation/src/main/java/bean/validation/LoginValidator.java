@@ -9,6 +9,6 @@ public class LoginValidator implements ConstraintValidator<Login, String> {
 
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         if(s == null) return false;
-        return s.length() >= 3 && s.length() <= 8;
+        return s.length() >= 3 && s.length() <= 8 && !s.isEmpty();
     }
 }

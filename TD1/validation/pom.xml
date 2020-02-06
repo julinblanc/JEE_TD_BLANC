@@ -5,6 +5,18 @@
   <artifactId>validation</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>6</source>
+          <target>6</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <name>validation</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -12,7 +24,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
 
@@ -27,6 +39,12 @@
       <artifactId>hibernate-validator</artifactId>
       <version>5.2.0.Alpha1</version>
     </dependency>
+
+  <dependency>
+    <groupId>javax.el</groupId>
+    <artifactId>javax.el-api</artifactId>
+    <version>2.2.4</version>
+  </dependency>
 
   </dependencies>
 </project>

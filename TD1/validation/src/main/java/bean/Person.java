@@ -1,36 +1,50 @@
 package bean;
 
 
+import bean.validation.FirstName;
+import bean.validation.LastName;
 import bean.validation.Login;
 import bean.validation.Email;
 
-import javax.validation.Constraint;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class Person {
 
-    @NotNull
     @Email
     private String email;
 
-    @NotNull
+    @FirstName
     private String firstName;
 
-    @NotNull
+    @LastName
     private String lastName;
 
-    @NotNull
     @Login
     private String login;
 
     private boolean isStudent;
 
-    public Person(String em, String firstN, String lastN, String log, boolean stu) {
-        email = em;
-        firstName = firstN;
-        lastName = lastN;
-        login = log;
-        isStudent = stu;
+    public Person() {
+        System.out.println("Personne créée");
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setStudent(boolean student) {
+        isStudent = student;
     }
 }

@@ -1,20 +1,22 @@
 package bean.validation;
 
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
 
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = EmailValidator.class)
+@Constraint(validatedBy = FirstNameValidator.class)
+public @interface FirstName {
 
-public @interface Email {
-
-    String message() default "{Email not null or doesn't have @}";
+    String message() default "{First name not an number and have more than 1 letter.}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default{};
-
 }

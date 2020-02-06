@@ -3,12 +3,11 @@ package bean.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class EmailValidator implements ConstraintValidator<Email, String> {
+public class LastNameValidator implements ConstraintValidator<LastName, String> {
 
-    public void initialize(Email parameters) {}
+    public void initialize(LastName lastName) { }
 
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
-        if(s == null) return false;
-        return s.indexOf('@')!= -1 && !s.isEmpty();
+        return !s.matches("\\p{Digit}+") && s.length() > 1 && !s.isEmpty();
     }
 }
