@@ -15,6 +15,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -79,10 +80,13 @@ public class RoomResource {
     @Produces({MediaType.APPLICATION_JSON + "; charset=UTF-8"})
     public RoomDetailsVO getRoom(@PathParam(value = "roomId") long roomId) {
         logger.debug("Retrieve room with id {}", roomId);
-        //TODO
+        RoomDetailsVO roomSearched = getRoom(roomId);
+        if(roomSearched == null) {
+            return null;
+        }
 
         //Return room
-        return null;
+        return roomSearched;
     }
 
     /**
@@ -98,17 +102,24 @@ public class RoomResource {
     @Consumes({MediaType.APPLICATION_JSON + "; charset=UTF-8"})
     public Response createRoom(SaveRoomVO roomVO) {
         logger.debug("Create a room");
-        if(roomVO.) return Response.notModified("Mandatory parameters missing").build();
-        // TODO check mandatory parameters -> http status 400
 
-        if() return
-        // TODO Check if a room already exists with this name -> http status 409
+        if(roomVO.getName() == null || roomVO.getDescription() == null) return Response.status(Response.Status.BAD_REQUEST).build();
+        // Check mandatory parameters -> http status 400
 
+
+        if(roomDao.findByName(roomVO.getName()) != null) return Response.status(Response.Status.CONFLICT).build();
+        // Check if a room already exists with this name -> http status 409
+
+        Room room = new Room();
+        room.setName(roomVO.getName());
+        room.setDescription(roomVO.getDescription());
+
+        roomDao.saveOrUpdate(room);
         // TODO Creates room in db
 
         // TODO Return a response with status 200 (OK) and created room id
 
-        return Response.ok().build();
+        return Response.ok(room.getId()).build();
     }
 
     // TODO creates other resources on access events
