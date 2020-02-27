@@ -23,16 +23,4 @@
         </form-login-config>
     </login-config>
 
-  <!-- Authentification de type Digest -->
-  <login-config>
-    <auth-method>DIGEST</auth-method>
-  </login-config>
-
-   <security-role>
-       <role-name>manager</role-name>
-   </security-role>
-   <security-role>
-       <role-name>employee</role-name>
-   </security-role>
-
 </web-app>
