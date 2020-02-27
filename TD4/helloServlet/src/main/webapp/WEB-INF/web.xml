@@ -12,4 +12,27 @@
     <servlet-name>HomeServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+
+    <!-- Authentification par formulaire -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        <form-login-config>
+            <form-login-page>/login.xhtml</form-login-page>
+            <form-error-page>/error.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+
+  <!-- Authentification de type Digest -->
+  <login-config>
+    <auth-method>DIGEST</auth-method>
+  </login-config>
+
+   <security-role>
+       <role-name>manager</role-name>
+   </security-role>
+   <security-role>
+       <role-name>employee</role-name>
+   </security-role>
+
 </web-app>
