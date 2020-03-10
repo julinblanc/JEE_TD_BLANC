@@ -22,6 +22,11 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="27" />
+    <option name="width" value="950" />
+    <option name="height" value="1053" />
+  </component>
   <component name="ProjectId" id="1X9YT6DBFRK8ZklIvpOFWeoVp4C" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -63,11 +68,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="fr.iut" />
       <option name="MAIN_CLASS_NAME" value="fr.iut.StringUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.StringUtilTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.StringUtilTest" />
